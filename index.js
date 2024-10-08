@@ -101,5 +101,76 @@ const animal = {
     anios: 2,
     tamanio: "Grande"
 }
+// console.log(datosAnimal(animal))
 
-console.log(datosAnimal(animal))
+
+// REQUERIMIENTO 4 
+/* Tomar el objeto creado con anterioridad, y crear una copia actualizada usando el spread
+operator; actualizar dos campos, y añadir dos nuevos */
+
+const datosAdicionales = {
+    vacunado: true,
+    entrenado: false,
+    color: "Marrón",
+    anios: 4
+}
+
+// Solución 1 Req4
+// const animalCopy = { ...animal, ...datosAdicionales }
+
+// Solución 2 Req4
+const animalCopy = {
+    ...animal,
+    vacunado: true,
+    entrenado: false,
+    color: "Marrón",
+    anios: 4
+}
+
+// console.log(animalCopy);
+
+
+// Ejemplo de clonación sin referencia
+// const animal2 = animal
+// const animal2 = JSON.parse(JSON.stringify(animal))
+const animal2 = { ...animal }
+animal2.anios = 4
+// console.log(animal);
+
+
+// Ejemplo Spread Operator con arrays
+const personas = ["José","María","Jesús"]
+const personas2 = [ ...personas ]
+personas2.push("Luis")
+// console.log(personas2);
+
+
+// REQUERIMIENTO 5
+/* Obtener las propiedades del objeto en un Array, utilizando el método Object.values(), y
+luego usar un ciclo for of para mostrar por pantalla todos los ítems del Array */
+
+// console.log("Ciclo que muestra las llaves");
+// for (const key of Object.keys(animalCopy)) {
+//     console.log(key);
+// }
+
+// console.log("Ciclo que muestra los valores");
+// for (const valor of Object.values(animalCopy)) {
+//     console.log(valor);
+// }
+
+// console.log("Ciclo que muestra las llaves y sus valores");
+// for (const element of Object.entries(animalCopy)) {
+//     console.log(element);
+// }
+
+// console.log("Ciclo con for in");
+// for (const key in animalCopy) {
+//     console.log(key);
+// }
+
+console.log(animalCopy);
+
+const { tamanio, entrenado, ...result} = animalCopy
+
+console.log(result);
